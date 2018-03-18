@@ -5,6 +5,11 @@ using namespace std;
 
 int main(int argc, char* argv[]) //different arguments than usual
 { 
-	//TLDLIR001::VolImage v = new VolImage();
-	
+	tldlir001::VolImage *v = new tldlir001::VolImage();
+	(*v).readImages("brain_mri_raws/MRI");
+
+
+
+
+	return 0;
 }
