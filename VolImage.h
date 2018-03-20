@@ -16,6 +16,7 @@ namespace tldlir001
     private: // private members
         
         int width, height; // width and height of image stack
+        int numImg;
         std::vector<unsigned char**> slices;  // data for each slice, in order
 
     public: // public members
@@ -26,7 +27,7 @@ namespace tldlir001
 
         // populate the object with images in stack and
         //set member variables defined in .cpp
-        bool readImages(std::string baseName);
+        bool readImages(std::string baseName); 
 
         // compute difference map and write out; defined in .cpp
         void diffmap(int sliceI, int sliceJ, std::string output_prefix);
@@ -36,7 +37,7 @@ namespace tldlir001
 
         // number of bytes uses to store image data bytes
         //and pointers (ignore vector<> container, dims etc)
-        // defined in .cpp
+        // defined in .cpp (BONUS MARKS)
         int volImageSize(void);
 
     };
