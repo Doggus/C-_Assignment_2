@@ -122,7 +122,10 @@ void tldlir001::VolImage::diffmap(int sliceI, int sliceJ, string output_prefix)
 	{
 		for (int c = 0; c < width; c++)
 		{
-			dmap << (unsigned char)(abs( (float)slices[sliceI][r][c] - (float)slices[sliceJ][r][c]) / 2) << endl;
+			//either:
+			//dmap.put((unsigned char)(abs( (float)slices[sliceI][r][c] - (float)slices[sliceJ][r][c]) / 2));
+			//or:
+			dmap << (unsigned char)(abs( (float)slices[sliceI][r][c] - (float)slices[sliceJ][r][c]) / 2);
 		}
 	}
 
@@ -155,6 +158,8 @@ void tldlir001::VolImage::extract(int sliceId, string output_prefix)
     {
     	
     	raw << slices[sliceId][j] << endl;
+    	
+    	//raw.put(slices[sliceIf][j]); //works?
 
     }
 
