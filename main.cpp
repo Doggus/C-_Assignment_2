@@ -33,5 +33,7 @@ int main(int argc, char* argv[]) //different arguments than usual
 	}
 	*/
 
+	delete v; //calls the ~VolImage method to clear 'v' from memory
+
 	return 0;
 }

@@ -20,6 +20,16 @@ tldlir001::VolImage::VolImage()
 tldlir001::VolImage::~VolImage() // destructor method
 {
    //delete[] slices;
+
+	for (int i = 0; i < numImg; i++)
+	{
+		for (int j = 0; j < height; j++)
+		{
+			delete[] slices[i][j];
+		}
+
+		delete[] slices[i];
+	}
 }
 
 
@@ -158,7 +168,7 @@ void tldlir001::VolImage::extract(int sliceId, string output_prefix)
     {
     	
     	raw << slices[sliceId][j] << endl;
-    	
+
     	//raw.put(slices[sliceIf][j]); //works?
 
     }
